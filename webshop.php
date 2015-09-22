@@ -27,20 +27,35 @@
 	</div>
 
 	<div class="indexStyle">
-  		<h2>Login</h2>
-  		<form action="login.php" method="post">
-		<p>
-			<label>Username:</label>
-			<input id="loginName" name="loginName" placeholder="Username" type="text">
-		</p>
-		<p>
-			<label>Password:</label>
-			<input id="loginPwd" name="loginPwd" placeholder="**********" type="password">
-		</p>
-		<p>
-			<input name="loginSubmit" type="submit" value=" Login ">
+  		<h2>Item 1</h2>
+  		<form method="post">
+		//////Lägg till bild
+echo "price";
+					<p>
+			<input name="submit" type="submit" value=" Add to cart ">
 		</p>
 </form>
+
+<?php
+$host="localhost"; // Host name 
+$username="root"; // Mysql username 
+$password=""; // Mysql password 
+$db_name="db1"; // Database name 
+$tbl_name="Members"; // Table name 
+
+
+// Connect to server and select databse.
+$db = new PDO('mysql:host=localhost;dbname=db1;charset=utf8', 'root', '');
+
+if(isset($_REQUEST['submit']))
+{
+echo "yes";
+     $sql = "INSERT INTO Basket (itemName, price)
+VALUES ('haj', 9)";
+$db->query($sql);
+
+}
+?>
 	</div>
 
 	<div class="indexStyle">
