@@ -37,13 +37,6 @@ echo "price";
 </form>
 
 <?php
-$host="localhost"; // Host name 
-$username="root"; // Mysql username 
-$password=""; // Mysql password 
-$db_name="db1"; // Database name 
-$tbl_name="Members"; // Table name 
-
-
 // Connect to server and select databse.
 $db = new PDO('mysql:host=localhost;dbname=db1;charset=utf8', 'root', '');
 
