@@ -22,27 +22,29 @@
 	</head>
 	
 	<body>
+<?php
+// Connect to server and select databse.
+$db = new PDO('mysql:host=localhost;dbname=db1;charset=utf8', 'root', '');
+?>
+
 	<div class="topStyle">
 		<h1>Webshop</h1>
 	</div>
 
 	<div class="indexStyle">
-  		<h2>Item 1</h2>
+  		<h2>Haj</h2>
   		<form method="post">
 		//////Lägg till bild
-echo "price";
+9 kr
 					<p>
-			<input name="submit" type="submit" value=" Add to cart ">
+			<input name="submitHaj" type="submit" value=" Add to cart ">
 		</p>
 </form>
-
 <?php
-// Connect to server and select databse.
-$db = new PDO('mysql:host=localhost;dbname=db1;charset=utf8', 'root', '');
 
-if(isset($_REQUEST['submit']))
+if(isset($_REQUEST['submitHaj']))
 {
-echo "yes";
+echo "Added to cart";
      $sql = "INSERT INTO Basket (itemName, price)
 VALUES ('haj', 9)";
 $db->query($sql);
@@ -50,22 +52,79 @@ $db->query($sql);
 }
 ?>
 	</div>
-
-	<div class="indexStyle">
-		<h2>Register</h2>
-		<form action="register.php" method="post">
-		<p>
-			<label>Username:</label>
-			<input id="registerName" name="registerName" placeholder="Username" type="text">
-		</p>
-		<p>
-			<label>Password:</label>
-			<input id="registerPwd" name="registerPwd" placeholder="**********" type="password">
-		</p>
-		<p>
-			<input name="registerSubmit" type="submit" value=" Register ">
+<div class="indexStyle">
+  		<h2>Katt</h2>
+  		<form method="post">
+		//////Lägg till bild
+4 kr
+					<p>
+			<input name="submitKatt" type="submit" value=" Add to cart ">
 		</p>
 </form>
+
+<?php
+
+if(isset($_REQUEST['submitKatt']))
+{
+echo "Added to cart";
+     $sql = "INSERT INTO Basket (itemName, price)
+VALUES ('Katt', 4)";
+$db->query($sql);
+
+}
+?>
 	</div>
+<div class="indexStyle">
+  		<h2>Ko</h2>
+  		<form method="post">
+		//////Lägg till bild
+5 kr
+					<p>
+			<input name="submitKo" type="submit" value=" Add to cart ">
+		</p>
+</form>
+
+<?php
+
+if(isset($_REQUEST['submitKo']))
+{
+echo "Added to cart";
+     $sql = "INSERT INTO Basket (itemName, price)
+VALUES ('Ko', 5)";
+$db->query($sql);
+
+}
+?>
+	</div>
+<div class="indexStyle">
+  		<h2>Hund</h2>
+  		<form method="post">
+		//////Lägg till bild
+3 kr
+					<p>
+			<input name="submitHund" type="submit" value=" Add to cart ">
+		</p>
+</form>
+
+<?php
+
+if(isset($_REQUEST['submitHund']))
+{
+echo "Added to cart";
+     $sql = "INSERT INTO Basket (itemName, price)
+VALUES ('Hund', 3)";
+$db->query($sql);
+
+}
+?>
+	</div>
+<form action="logout.php" method="post">
+	<input name="logoutButton" type="submit" value=" Logout">
+</form>
+
+<form action="checkout.php" method="post">
+	<input name="checkoutButton" type="submit" value=" To checkout">
+</form>
+
 	</body>
 </html>

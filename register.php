@@ -10,7 +10,7 @@ $mypassword=$_REQUEST['registerPwd'];
 // To protect MySQL injection (more detail about MySQL injection)
 $myusername = stripslashes($myusername);
 $mypassword = stripslashes($mypassword);
-
+$mypassword = hash('ripemd160', $mypassword . 'abcd');
 
 $sql = "INSERT INTO Members (username, password)
 VALUES ('$myusername', '$mypassword')";

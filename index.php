@@ -22,6 +22,18 @@
 	</head>
 	
 	<body>
+
+<?php 
+// Connect to server and select databse.
+$db = new PDO('mysql:host=localhost;dbname=db1;charset=utf8', 'root', '');
+
+		$sql = "delete from basket";
+		$stmt = $db->query($sql);
+
+
+
+?>
+
 	<div class="topStyle">
 		<h1>Webshop</h1>
 	</div>
