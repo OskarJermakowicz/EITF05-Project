@@ -28,8 +28,12 @@
 $db = new PDO('mysql:host=localhost;dbname=db1;charset=utf8', 'root', '');
 
 		$sql = "delete from basket";
-		$stmt = $db->query($sql);
+		$db->query($sql);
 
+// Förebygga session fixation
+
+session_regenerate_id();
+$_SESSION['logged_in'] = TRUE;
 
 
 ?>
