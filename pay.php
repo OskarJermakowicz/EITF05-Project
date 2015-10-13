@@ -12,9 +12,10 @@
 			} 
 
 			.topStyle {
+				margin: 5px;
 				padding: 15px;
-				width: 655px;
-				height: 60px;
+				width: 642px;
+				height: 50px;
 				border: 1px solid black;
 			}
 		</style>
@@ -27,7 +28,7 @@
 	</div>
 
 	<div class="indexStyle">
-  		<h2>Your basket</h2>
+  		<h2>Your cart</h2>
 
   		<form method="post">
 <?php 
