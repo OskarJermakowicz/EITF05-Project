@@ -12,9 +12,10 @@
 			} 
 
 			.topStyle {
+				margin: 5px;
 				padding: 15px;
-				width: 655px;
-				height: 60px;
+				width: 642px;
+				height: 50px;
 				border: 1px solid black;
 			}
 		</style>
@@ -27,7 +28,7 @@
 	</div>
 
 	<div class="indexStyle">
-  		<h2>Your basket</h2>
+  		<h2>Your cart</h2>
 
   		<form method="post">
 <?php 
@@ -41,10 +42,10 @@ $db = new PDO('mysql:host=localhost;dbname=db1;charset=utf8', 'root', '');
 if ($stmt->rowCount() > 0) {
     // output data of each row
     while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-        echo "Item: " . $row["itemName"]. " - Price: " . $row["price"]. "<br>";
+        echo "<b>Item:</b> " . $row["itemName"]. " <b>Price:</b> " . $row["price"]. " SEK<br>";
     }
 } else {
-    echo "no items in your basket";
+    echo "No items in your cart.";
 }
 
 $sql = "SELECT sum(price) FROM basket";
@@ -53,10 +54,10 @@ $stmt2 = $db->query($sql);
 if ($stmt2->rowCount() > 0) {
     // output data of each row
     while($row = $stmt2->fetch(PDO::FETCH_ASSOC)) {
-        echo "<br> Sum of your items are: " . $row["sum(price)"]. "<br>";
+        echo "<br><b>The price of all items:</b> " . $row["sum(price)"]. " SEK<br>";
     }
 } else {
-    echo "<br> no items in your basket";
+    echo "<br> No items in your cart.";
 }
 
 
