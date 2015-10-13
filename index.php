@@ -12,9 +12,10 @@
 			} 
 
 			.topStyle {
+				margin: 5px;
 				padding: 15px;
-				width: 655px;
-				height: 60px;
+				width: 642px;
+				height: 50px;
 				border: 1px solid black;
 			}
 		</style>
@@ -24,18 +25,12 @@
 	<body>
 
 <?php 
-// Connect to server and select databse.
 $db = new PDO('mysql:host=localhost;dbname=db1;charset=utf8', 'root', '');
-
-		$sql = "delete from basket";
-		$db->query($sql);
-
-// Förebygga session fixation
+$sql = "delete from basket";
+$db->query($sql);
 
 session_regenerate_id();
 $_SESSION['logged_in'] = TRUE;
-
-
 ?>
 
 	<div class="topStyle">
@@ -56,7 +51,7 @@ $_SESSION['logged_in'] = TRUE;
 		<p>
 			<input name="loginSubmit" type="submit" value=" Login ">
 		</p>
-</form>
+		</form>
 	</div>
 
 	<div class="indexStyle">
@@ -73,7 +68,7 @@ $_SESSION['logged_in'] = TRUE;
 		<p>
 			<input name="registerSubmit" type="submit" value=" Register ">
 		</p>
-</form>
+		</form>
 	</div>
 	</body>
 </html>
