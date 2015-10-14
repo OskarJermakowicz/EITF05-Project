@@ -11,7 +11,7 @@ $mypassword=$_REQUEST['loginPwd'];
 $myusername = stripslashes($myusername);
 $mypassword = stripslashes($mypassword);
 
-$mypassword = hash('ripemd160', $mypassword . 'abcd');
+$mypassword = hash('sha256', $mypassword . 'abcd');
 
 
 $sql = "SELECT * FROM Members WHERE username='$myusername' and password='$mypassword'";
@@ -22,7 +22,7 @@ if($count == 1){
 $sql = "UPDATE Members SET count = 0 WHERE username='$myusername'";
 $db->query($sql);
 
-header("location: webshop.php");
+header("location: webshop.php?username=" . $myusername);
 } else {
 echo "Wrong username or password. Please try again.";
 

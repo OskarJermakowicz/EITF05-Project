@@ -31,6 +31,18 @@ $db->query($sql);
 
 session_regenerate_id();
 $_SESSION['logged_in'] = TRUE;
+
+
+$token = md5(uniqid(rand(), TRUE));
+$_SESSION['token'] = $token;
+$_SESSION['token_time'] = time();
+
+if (!isset($_SESSION['token']))
+{
+    $_SESSION['token'] = md5(uniqid(rand(), TRUE));
+}
+
+
 ?>
 
 	<div class="topStyle">

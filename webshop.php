@@ -44,7 +44,12 @@
 	</div>
 
 	<div class="bottomStyle">
-		<b>Logged in as:</b> USERNAME
+		<b>Logged in as:</b> 
+
+<?php
+echo $_GET["username"];
+
+?>
 	</div>
 
 	<div class="indexStyle">
