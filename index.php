@@ -29,6 +29,7 @@ $db = new PDO('mysql:host=localhost;dbname=db1;charset=utf8', 'root', '');
 $sql = "delete from basket";
 $db->query($sql);
 
+session_start();
 session_regenerate_id();
 $_SESSION['logged_in'] = TRUE;
 

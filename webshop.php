@@ -1,4 +1,13 @@
+<?php
+session_start();
+if(!isset($_SESSION["username"])){
+	header("location: index.php?login=failed");
+	exit();
+}
+?>
+
 <!DOCTYPE html>
+
 <html>
 	<head>
 		<style>
@@ -32,6 +41,7 @@
 			}
 		</style>
 		<title>Webshop</title>
+
 	</head>
 	
 	<body>
@@ -47,7 +57,10 @@
 		<b>Logged in as:</b> 
 
 <?php
-echo $_GET["username"];
+
+
+echo $_SESSION["username"];
+//echo $_GET["username"];
 
 ?>
 	</div>
