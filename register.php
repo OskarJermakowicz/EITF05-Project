@@ -23,8 +23,8 @@ $stmt = $db->prepare($sql);
 $stmt->bindParam(1, $myusername);
 $stmt->bindParam(2, $mypassword);
 $stmt->execute();
-$result = $db->query($sql);
-if($result){
+//$result = $db->query($sql);
+if($stmt){
 echo "Registration successful. Now proceed to log in.";
 } else {
 echo "Username already exists";
